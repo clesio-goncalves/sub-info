@@ -1,0 +1,34 @@
+{% extends 'shared/base.html' %}
+{% block conteudo %}
+
+<br>
+<div class="container">
+
+    <h1>Cadastro de Aluno</h1>
+
+    <br>
+
+    <form action="" method="POST" class="row g-3">
+        {% csrf_token %}
+        
+            <div class="col-md-12">
+                <label for="{{ form.nome.id_for_label }}" class="form-label">{{ form.nome.label }}</label>
+                {{ form.nome }}
+            </div>
+
+            <div class="col-md-12">
+                <label for="{{ form.matricula.id_for_label }}" class="form-label">{{ form.matricula.label }}</label>
+                {{ form.matricula }}
+            </div>
+
+            <div class="col-md-12">
+                <label for="{{ form.telefone.id_for_label }}" class="form-label">{{ form.telefone.label }}</label>
+                {{ form.telefone }}
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
