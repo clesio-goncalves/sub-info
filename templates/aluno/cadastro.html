@@ -16,15 +16,33 @@
                 {{ form.nome }}
             </div>
 
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <label for="{{ form.matricula.id_for_label }}" class="form-label">{{ form.matricula.label }}</label>
                 {{ form.matricula }}
             </div>
 
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <label for="{{ form.telefone.id_for_label }}" class="form-label">{{ form.telefone.label }}</label>
                 {{ form.telefone }}
             </div>
+
+            <div class="col-md-12">
+                <label for="{{ form.email.id_for_label }}" class="form-label">{{ form.email.label }}</label>
+                {{ form.email }}
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-check form-switch">
+                  <label for="{{ form.status.id_for_label }}" class="form-label form-check-label">{{ form.status.label }}</label>
+                  {{ form.status }}
+                </div>
+              </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-save"></i> Salvar</button>
+                <button type="reset" class="btn btn-secondary btn-lg"><i class="bi bi-trash"></i> Limpar</button>
+            </div>
+
         </div>
 
     </form>
