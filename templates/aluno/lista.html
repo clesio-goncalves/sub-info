@@ -28,19 +28,19 @@
                     <td>{{ aluno.telefone }}</td>
                     <td>
                         {% if aluno.status %}
-                            Ativo
+                            <p class="text-success">Ativo</p>
                         {% else %}
-                            Inativo
+                            <p class="text-danger">Inativo</p>
                         {% endif %}
                     </td>
                     <td class="text-nowrap">
                         <!--Exibir-->
-                        <a href="" class="btn btn-outline-info btn-sm" 
+                        <a href="{% url 'aluno/exibe' aluno.id %}" class="btn btn-outline-info btn-sm" 
                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="Exibir"> 
                           <i class="bi bi-eye"></i></a>
 
                         <!--Editar-->
-                        <a href="" class="btn btn-outline-warning btn-sm" 
+                        <a href="{% url 'aluno/edita' aluno.id %}" class="btn btn-outline-warning btn-sm" 
                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar"> 
                           <i class="bi bi-pencil-square"></i></a>
                     </td>

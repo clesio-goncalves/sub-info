@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from apps.aluno.models import Aluno
 from apps.aluno.forms import AlunoForms
 
@@ -15,14 +15,25 @@ def cadastrar(request):
 
     if request.method == 'POST':
         form = AlunoForms(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             return redirect("aluno/lista")
     
     return render(request, "aluno/cadastro.html", {"form": form})
 
-def editar(request):
-    pass
+def editar(request, id):
+    aluno = Aluno.objects.get(id=id)
+    form = AlunoForms(instance=aluno)
 
-def exibir(request):
-    pass
+    if request.method == 'POST':
+        form = AlunoForms(request.POST, instance=aluno)
+        if form.is_valid():
+            form.save()
+            return redirect("aluno/lista")
+
+    return render(request, "aluno/edita.html", 
+                  {"form": form, "aluno_id": id})
+
+def exibir(request, id):
+    aluno = get_object_or_404(Aluno, pk=id)
+    return render(request, "aluno/exibe.html", {"aluno": aluno})
