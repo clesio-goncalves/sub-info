@@ -1,12 +1,26 @@
 {% extends 'shared/base.html' %}
 {% block conteudo %}
 
-<br>
-<div class="container">
+<main class="main">
 
-    <h1>Cadastro de Aluno</h1>
+    <!-- Page Title -->
+    <div class="page-title light-background">
+        <div class="container">
+          <h1>Cadastrar Aluno</h1>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{% url 'aluno/lista' %}">Aluno</a></li>
+              <li class="current">Lista</li>
+            </ol>
+          </nav>
+        </div>
+      </div><!-- End Page Title -->
 
-    <br>
+        <!-- Starter Section Section -->
+  <section id="starter-section" class="starter-section section">
+
+    <div class="container" data-aos="fade-up">
+
 
     <form action="{% url 'aluno/cadastro' %}" method="POST" class="row g-3">
         {% csrf_token %}
@@ -48,5 +62,9 @@
     </form>
 
 </div>
+
+</section><!-- /Starter Section Section -->
+
+</main>
 
 {% endblock %}

@@ -2,12 +2,25 @@
 {% load static %}
 {% block conteudo %}
 
-<br>    <br>
+<main class="main">
 
-<div class="container">
+    <!-- Page Title -->
+    <div class="page-title light-background">
+        <div class="container">
+          <h1>Exibir Aluno</h1>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{% url 'aluno/lista' %}">Aluno</a></li>
+              <li class="current">Lista</li>
+            </ol>
+          </nav>
+        </div>
+      </div><!-- End Page Title -->
 
-    <h2>Exibe Aluno</h2>
-    <br>
+        <!-- Starter Section Section -->
+  <section id="starter-section" class="starter-section section">
+
+    <div class="container" data-aos="fade-up">
 
     <table class="table table-hover">
         <tr class="table-info">
@@ -53,5 +66,9 @@
 
     <button class="btn btn-success" href="#" onclick="window.history.back()"><i class="bi bi-chevron-left"></i> Voltar</button>
 </div>
+
+</section><!-- /Starter Section Section -->
+
+</main>
 
 {% endblock %}

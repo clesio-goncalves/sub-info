@@ -2,9 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from apps.aluno.models import Aluno
 from apps.aluno.forms import AlunoForms
 
-def index(request):
-    return render(request, 'aluno/index.html')
-
 def listar(request):
     alunos = Aluno.objects.order_by("-id")
 
